@@ -20,7 +20,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.19.0'  # Very specific version - '22' would be fine too
-          cache: 'npm'             # ✅ Add caching for faster builds
           
       - name: Install dependencies
         run: npm ci
