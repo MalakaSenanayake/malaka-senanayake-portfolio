@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '22.19.0'
       - name: Build Angular app
-        run: npx ng build --configuration production --base-href https://malakasenanayake.com/
+        run: npm run build --configuration production --base-href https://malakasenanayake.com/
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
