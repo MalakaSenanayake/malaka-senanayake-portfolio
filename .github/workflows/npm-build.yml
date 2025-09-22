@@ -2,8 +2,8 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches: ["production"]
-  pull_request:
-    branches: ["production"]
+  
+    
 permissions:
   contents: write
 jobs:
@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '22.19.0'
       - name: Build Angular app
-        run: npm run build --configuration production --base-href https://malakasenanayake.com/
+        run: npx ng build --configuration production --base-href https://malakasenanayake.com/
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
