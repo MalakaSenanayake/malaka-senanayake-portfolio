@@ -25,4 +25,12 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm run build
+        npm run build --configuration production --base-href https://MalakaSenanayake.github.io/malaka-senanayake-portfolio/ && npx angular-cli-ghpages --dir=dist/malaka-senanayake-portfolio/browser
+       
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v6
+      with:
+          branch: gh-pages
+          folder: dist/malaka-senanayake-portfolio/browser   # <-- include /browser
+          clean: true
