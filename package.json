@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build --base-href https://malakasenanayake.com/",
     "watch": "ng build --watch --configuration development",
+    "deploy": "gh-pages -d dist/malaka-senanayake-portfolio/browser"
     "test": "ng test"
   },
   "prettier": {
