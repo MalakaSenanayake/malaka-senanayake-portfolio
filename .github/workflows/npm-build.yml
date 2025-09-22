@@ -1,43 +1,27 @@
 name: Deploy Angular App to GitHub Pages
-
 on:
   push:
-    branches: [ "production" ]
+    branches: ["production"]
   pull_request:
-    branches: [ "production" ]
-
+    branches: ["production"]
 permissions:
   contents: write
-  # pages: write
-  # id-token: write
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      # with:
-      #   token: ${{ secrets.PAT_TOKEN }} 
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22.19.0'
-        # cache: 'npm'
-    
-    - name: Install angular
-      run: npm install @angular/cli
-    
-    - name: Build Angular app
-      run: npx ng build --configuration production --base-href https://malakasenanayake.com/
-    
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
-        folder: dist/malaka-senanayake-portfolio/browser
-        clean: true
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.19.0'
+      - name: Build Angular app
+        run: npx ng build --configuration production --base-href https://malakasenanayake.com/
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: dist/malaka-senanayake-portfolio/browser
+          clean: true
