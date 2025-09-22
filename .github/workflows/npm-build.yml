@@ -1,4 +1,4 @@
-name: NodeJS deployment
+name: Deploy Angular App to GitHub Pages
 
 on:
   push:
@@ -7,35 +7,29 @@ on:
     branches: [ "production" ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [22.19.0]
-
+    
     steps:
-    - uses: actions/checkout@v4
-
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
-  
-    - run: npm run build --if-present
-
+        node-version: '22.19.0'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build Angular app
+      run: npx ng build --configuration production --base-href https://malakasenanayake.com/
+    
     - name: Deploy to GitHub Pages
-      run: |
-        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npm run deploy
-      # Fixed branch reference - changed from master to production
-      if: ${{ github.ref == 'refs/heads/production' }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    # - name: Deploy to GitHub Pages
-    #   uses: JamesIves/github-pages-deploy-action@v6
-    #   with:
-    #       branch: gh-pages
-    #       folder: dist/malaka-senanayake-portfolio/browser   # <-- include /browser
-    #       clean: true
+      uses: JamesIves/github-pages-deploy-action@v4
+      if: github.ref == 'refs/heads/production'
+      with:
+        branch: gh-pages
+        folder: dist/malaka-senanayake-portfolio/browser
+        clean: true
