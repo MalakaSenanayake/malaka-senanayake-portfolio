@@ -7,9 +7,9 @@ on:
     branches: [ "production" ]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
+  # pages: write
+  # id-token: write
 
 jobs:
   build-and-deploy:
@@ -18,14 +18,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.PAT_TOKEN }} 
+      # with:
+      #   token: ${{ secrets.PAT_TOKEN }} 
     
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '22.19.0'
-        # cache: 'npm'
+        cache: 'npm'
     
     - name: Install angular
       run: npm install @angular/cli
@@ -35,8 +35,9 @@ jobs:
     
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
-      if: github.ref == 'refs/heads/production'
+      
       with:
+        token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
         folder: dist/malaka-senanayake-portfolio/browser
         clean: true
