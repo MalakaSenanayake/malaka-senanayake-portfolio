@@ -1,16 +1,30 @@
-<!-- OLD: (do NOT keep) -->
-<!-- (click)="$event.preventDefault(); document.getElementById('projects')?.scrollIntoView({behavior:'smooth'})" -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-about">
+      <h3>Malaka Senanayake</h3>
+      <p>Senior Software Engineer | Building scalable software and creative solutions.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/malaka-senanayake/" target="_blank" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/MalakaSenanayake" target="_blank" class="social-link" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
 
-<!-- NEW: -->
-<li>
-  <a href="#" (click)="navigateTo('home', $event)">Home</a>
-</li>
-<li>
-  <a href="#" (click)="navigateTo('about', $event)">About</a>
-</li>
-<li>
-  <a href="#" (click)="navigateTo('projects', $event)">Projects</a>
-</li>
-<li>
-  <a href="#" (click)="navigateTo('contact', $event)">Contact</a>
-</li>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#" (click)="navigateTo('home', $event)">Home</a></li>
+        <li><a href="#" (click)="navigateTo('about', $event)">About</a></li>
+        <li><a href="#" (click)="navigateTo('projects', $event)">Projects</a></li>
+        <li><a href="#" (click)="navigateTo('contact', $event)">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2025 | Malaka Senanayake
+  </div>
+</footer>
