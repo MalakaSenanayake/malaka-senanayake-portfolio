@@ -1,0 +1,16 @@
+<!-- OLD: (do NOT keep) -->
+<!-- (click)="$event.preventDefault(); document.getElementById('projects')?.scrollIntoView({behavior:'smooth'})" -->
+
+<!-- NEW: -->
+<li>
+  <a href="#" (click)="navigateTo('home', $event)">Home</a>
+</li>
+<li>
+  <a href="#" (click)="navigateTo('about', $event)">About</a>
+</li>
+<li>
+  <a href="#" (click)="navigateTo('projects', $event)">Projects</a>
+</li>
+<li>
+  <a href="#" (click)="navigateTo('contact', $event)">Contact</a>
+</li>

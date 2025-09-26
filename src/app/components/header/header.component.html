@@ -1,0 +1,16 @@
+<header>
+  <div class="nav-container container">
+    <a class="logo" (click)="navigateTo('home')">Malaka <span>Senanayake</span></a>
+
+    <div class="mobile-menu" (click)="toggleMenu()" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a (click)="navigateTo('home')">Home</a></li>
+      <li><a (click)="navigateTo('about')">About</a></li>
+      <li><a (click)="navigateTo('projects')">Projects</a></li>
+      <li><a (click)="navigateTo('contact')">Contact</a></li>
+    </ul>
+  </div>
+</header>
