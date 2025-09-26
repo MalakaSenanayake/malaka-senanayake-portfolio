@@ -29,7 +29,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },"src/assets"
+              },
+               "src/assets",
+                "src/icons/favicon.ico",
+                "src/manifest.json",
+                "src/sw.js"
             ],
             "styles": [
               "src/styles.scss"
@@ -50,7 +54,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+               "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
