@@ -1,15 +1,9 @@
 import { Routes } from '@angular/router';
-import { BannerComponent } from './components/banner/banner.component';
-import { AboutComponent } from './components/about/about.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ContactComponent } from './components/contact/contact.component';
 
+/**
+ * We keep the app as a single page with internal scroll for sections,
+ * but provideRouter(routes) is configured in main.ts for future use.
+ */
 export const routes: Routes = [
-  { path: '', component: BannerComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'skills', component: SkillsComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '**', redirectTo: '' }
+  // If you later want per-section routing, add route objects here.
 ];

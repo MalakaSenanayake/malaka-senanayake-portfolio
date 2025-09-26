@@ -1,0 +1,53 @@
+.hero {
+  height: calc(100vh - 70px);
+  background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text { flex: 1; padding-right: 50px; }
+.hero-text h1 { font-size: 3.2rem; margin-bottom: 20px; line-height: 1.2; }
+.hero-text p { color: var(--light); max-width: 600px; margin-bottom: 20px; }
+
+.hero-image { flex: 1; text-align: center; }
+.profile-img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--secondary);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Buttons reuse global classes */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--secondary);
+  margin-left: 15px;
+}
+
+/* responsive */
+@media (max-width: 992px) {
+  .hero-content { flex-direction: column; text-align: center; padding-top: 30px; }
+  .hero-text { padding-right: 0; margin-bottom: 30px; }
+  .profile-img { width: 250px; height: 250px; }
+}
