@@ -1,1 +1,16 @@
-<p>project-card works!</p>
+<article class="card project">
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+    <h3 style="margin:0;">{{ title }}</h3>
+    <div class="actions">
+      <a *ngIf="github" class="btn" [href]="github" target="_blank" rel="noopener">Code</a>
+      <a *ngIf="demo" class="btn secondary" [href]="demo" target="_blank" rel="noopener">Demo</a>
+    </div>
+  </div>
+
+  <p class="lead" style="margin-top:.6rem;">{{ description }}</p>
+
+  <div style="margin-top:.8rem; display:flex; gap:.5rem; flex-wrap:wrap;">
+    <span *ngFor="let t of tech" class="chip card">{{ t }}</span>
+  </div>
+</article>
+
