@@ -1,11 +1,11 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { importProvidersFrom } from '@angular/core';
+import { importProvidersFrom, isDevMode } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { routes } from './app/app.routes';
-import { appConfig } from './app/app.config';
+import { provideServiceWorker } from '@angular/service-worker';
 
 
 bootstrapApplication(AppComponent, {
@@ -17,6 +17,9 @@ bootstrapApplication(AppComponent, {
         anchorScrolling: 'enabled',
         scrollPositionRestoration: 'enabled'
       })
-    )
+    ), provideServiceWorker('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            registrationStrategy: 'registerWhenStable:30000'
+          })
   ]
 }).catch(err => console.error(err));

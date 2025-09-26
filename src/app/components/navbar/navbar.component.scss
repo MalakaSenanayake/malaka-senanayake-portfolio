@@ -1,23 +1,69 @@
-:host { width:100%; display:block; }
-.nav { display:flex; align-items:center; justify-content:center; padding: .6rem 1rem; border-radius: 12px; margin-bottom: 1.2rem; }
-.nav-inner { display:flex; align-items:center; justify-content:space-between; width:100%; max-width: var(--max-width); gap:1rem; }
-
-.brand {
-  font-weight:700;
-  letter-spacing: .2px;
-  color: var(--accent);
-  text-decoration:none;
-  font-size:1.05rem;
+:host { 
+  width: 100%; 
+  display: block; 
 }
 
-.hamburger { display:inline-flex; background:transparent; border:none; gap:.5rem; cursor:pointer; }
+.nav { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: .6rem 1rem; 
+  border-radius: 12px; 
+  margin-bottom: 1.2rem; 
+}
 
-.links { display:flex; gap: 1rem; align-items:center; }
-.links a { text-decoration:none; color:var(--muted); font-weight:600; padding:.45rem .6rem; border-radius:8px; transition: background .12s; }
-.links a:hover { background: rgba(13,25,40,0.04); color:var(--text); }
+.nav-inner { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  width: 100%; 
+  max-width: var(--max-width); 
+  gap: 1rem; 
+}
 
-/* mobile */
+.brand {
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+/* Hide hamburger button on desktop by default */
+.hamburger { 
+  display: none; 
+  background: transparent; 
+  border: none; 
+  gap: .5rem; 
+  cursor: pointer; 
+}
+
+.links { 
+  display: flex; 
+  gap: 1rem; 
+  align-items: center; 
+}
+
+.links a { 
+  text-decoration: none; 
+  color: var(--muted); 
+  font-weight: 600; 
+  padding: .45rem .6rem; 
+  border-radius: 8px; 
+  transition: background .12s; 
+}
+
+.links a:hover { 
+  background: rgba(13, 25, 40, 0.04); 
+  color: var(--text); 
+}
+
+/* --- Mobile styles --- */
 @media (max-width: 720px) {
+  .hamburger { 
+    display: inline-flex; /* Show hamburger on mobile */
+  }
+
   .links { 
     position: absolute;
     top: 70px;
@@ -25,12 +71,17 @@
     background: white;
     padding: 1rem;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(10,20,30,0.06);
+    box-shadow: 0 10px 30px rgba(10, 20, 30, 0.06);
     flex-direction: column;
     transform: scale(.98);
     opacity: 0;
-    pointer-events:none;
+    pointer-events: none;
     transition: opacity .18s ease, transform .18s ease;
   }
-  .links.open { opacity:1; pointer-events:auto; transform: scale(1); }
+
+  .links.open { 
+    opacity: 1; 
+    pointer-events: auto; 
+    transform: scale(1); 
+  }
 }
