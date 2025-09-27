@@ -1,0 +1,73 @@
+{
+  "configVersion": 1,
+  "timestamp": 1758958409217,
+  "index": "https://malakasenanayake.com/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://malakasenanayake.com/favicon.ico",
+        "https://malakasenanayake.com/index.html",
+        "https://malakasenanayake.com/main-77LXHQ4Z.js",
+        "https://malakasenanayake.com/polyfills-B6TNHZQ6.js",
+        "https://malakasenanayake.com/styles-CBKZFQNN.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://malakasenanayake.com/assets/icons/android-chrome-192x192.png",
+        "https://malakasenanayake.com/assets/icons/android-chrome-512x512.png",
+        "https://malakasenanayake.com/assets/icons/apple-touch-icon.png",
+        "https://malakasenanayake.com/assets/icons/favicon-16x16.png",
+        "https://malakasenanayake.com/assets/icons/favicon-32x32.png",
+        "https://malakasenanayake.com/assets/images/profile.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://malakasenanayake.com/assets/icons/android-chrome-192x192.png": "05d7510f2a96925e11e3ebdeb3705e95c77c74c7",
+    "https://malakasenanayake.com/assets/icons/android-chrome-512x512.png": "58000631cc600608cd3563f5bcda2c75439a1a3c",
+    "https://malakasenanayake.com/assets/icons/apple-touch-icon.png": "12e310c53216496ab6e8845e4afd9303d1c87791",
+    "https://malakasenanayake.com/assets/icons/favicon-16x16.png": "dcfe94d527787cafc3eee3195396bf9d45bd2b39",
+    "https://malakasenanayake.com/assets/icons/favicon-32x32.png": "44dc7b3ef7f79b910ed996216a49ec3ea364e0de",
+    "https://malakasenanayake.com/assets/images/profile.png": "33af4d07b39fb5add0481fe82ce20527ccce2cea",
+    "https://malakasenanayake.com/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "https://malakasenanayake.com/index.html": "8dddf4656e44f6470a2a9782055bb953571bd27b",
+    "https://malakasenanayake.com/main-77LXHQ4Z.js": "0fd0115b804980370bd9b0fde9dfc7076fd78d78",
+    "https://malakasenanayake.com/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
+    "https://malakasenanayake.com/styles-CBKZFQNN.css": "f03cbcd6d0f89648c773e502dad062ce122f50d4"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
