@@ -3,8 +3,6 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches: [ "production" ]
-  pull_request:
-    branches: [ "production" ]
 
 permissions:
   contents: write
