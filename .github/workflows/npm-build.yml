@@ -46,4 +46,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
         folder: dist/malaka-senanayake-portfolio/browser
-        clean: false
+        clean: true
