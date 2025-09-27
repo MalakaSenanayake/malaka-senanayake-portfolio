@@ -30,7 +30,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
-               "src/assets",
+                "src/assets",
                 "src/icons/favicon.ico",
                 "src/manifest.json",
                 "src/sw.js"
