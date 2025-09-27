@@ -39,7 +39,7 @@ jobs:
         fi
 
     - name: Build Angular app
-      run: npx ng build --configuration production --aot --build-optimizer --optimization --base-href https://malakasenanayake.com/
+      run: npx ng build --configuration production --aot --optimization --base-href https://malakasenanayake.com/
 
     - name: Minify HTML
       run: |
