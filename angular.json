@@ -34,6 +34,11 @@
                 "src/icons/favicon.ico",
                 "src/manifest.json",
                 "src/sw.js"
+              },
+               "src/assets",
+                "src/icons/favicon.ico",
+                "src/manifest.json",
+                "src/sw.js"
             ],
             "styles": [
               "src/styles.scss"
@@ -54,6 +59,8 @@
                   "maximumError": "8kB"
                 }
               ],
+              "outputHashing": "all",
+               "serviceWorker": "ngsw-config.json"
               "outputHashing": "all",
                "serviceWorker": "ngsw-config.json"
             },

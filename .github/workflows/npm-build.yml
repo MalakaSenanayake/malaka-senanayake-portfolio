@@ -23,6 +23,15 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
+
+    - name: Cache node modules
+      uses: actions/cache@v4
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
@@ -38,6 +47,10 @@ jobs:
           npm install
         fi
 
+
+    - name: Install dependencies
+      run: npm ci
+
     - name: Build Angular app
       run: npx ng build --configuration production --aot --optimization --base-href https://malakasenanayake.com/
 
@@ -46,7 +59,15 @@ jobs:
         npm install -g html-minifier-terser
         html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --minify-css true --minify-js true -o dist/malaka-senanayake-portfolio/browser/index.html dist/malaka-senanayake-portfolio/browser/index.html
 
+      run: npx ng build --configuration production --aot --build-optimizer --optimization --base-href https://malakasenanayake.com/
+
+    - name: Minify HTML
+      run: |
+        npm install -g html-minifier-terser
+        html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --minify-css true --minify-js true -o dist/malaka-senanayake-portfolio/browser/index.html dist/malaka-senanayake-portfolio/browser/index.html
+
     - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/production'
       if: github.ref == 'refs/heads/production'
       uses: JamesIves/github-pages-deploy-action@v4
       with:
