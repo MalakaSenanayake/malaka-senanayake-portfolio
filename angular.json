@@ -30,11 +30,6 @@
                 "glob": "**/*",
                 "input": "public"
               },
-                "src/assets",
-                "src/icons/favicon.ico",
-                "src/manifest.json",
-                "src/sw.js"
-              },
                "src/assets",
                 "src/icons/favicon.ico",
                 "src/manifest.json",
@@ -59,8 +54,6 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-               "serviceWorker": "ngsw-config.json"
               "outputHashing": "all",
                "serviceWorker": "ngsw-config.json"
             },
