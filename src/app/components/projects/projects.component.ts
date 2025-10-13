@@ -16,8 +16,7 @@ export class ProjectsComponent implements OnInit {
   categories = [
     { key: 'all', label: 'All' },
     { key: 'web', label: 'Web Apps' },
-    { key: 'mobile', label: 'Mobile' },
-    { key: 'api', label: 'APIs' }
+    { key: 'mobile', label: 'Mobile' }
   ];
 
   constructor(private projectService: ProjectService) {}

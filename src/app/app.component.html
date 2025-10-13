@@ -1,12 +1,19 @@
 <app-header></app-header>
 
-<main>
+<main class="main-container">
   <!-- each section's component uses a top-level section element so
        scrollService can find elements by id -->
-  <app-hero id="home"></app-hero>
-  <app-about id="about"></app-about>
-  <app-projects id="projects"></app-projects>
-  <app-contact id="contact"></app-contact>
+  <div>
+    <app-hero id="home"></app-hero>
+  </div>
+  <div>
+    <app-about id="about"></app-about>
+  </div>
+  <div>
+    <app-projects id="projects"></app-projects>
+  </div>
+  <div>
+    <app-contact id="contact"></app-contact>
+  </div>
 </main>
-
-<app-footer></app-footer>
+  <app-footer></app-footer>
