@@ -9,29 +9,29 @@ export class ProjectService {
   private projects: Project[] = [
     {
       id: 1,
-      title: 'E-commerce Platform',
+      title: 'Outstanding Management System',
       description: 'A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1674&q=80',
-      tags: ['React','Node.js','MongoDB','Stripe API'],
+      image: 'assets/project_images/oms_3.0.png',
+      tags: ['JavaFx','Java (Java SE)','MySQL','JasperReports'],
       category: 'web',
-      repoUrl: '#',
-      liveUrl: '#'
+      docsUrl: '#'
     },
     {
       id: 2,
-      title: 'Task Management App',
+      title: 'Modjoul AWS team',
       description: 'A mobile application for task management with real-time synchronization and offline capabilities.',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1674&q=80',
-      tags: ['React Native','Firebase','Redux'],
+      image: 'assets/project_images/modjoul.png',
+      tags: ['AWS','Angular','Node.js','Python','Java'],
       category: 'mobile',
-      repoUrl: '#'
+      repoUrl: '#',
+      liveUrl: 'https://modjoul.com'
     },
     {
       id: 3,
-      title: 'Weather API Service',
-      description: 'A RESTful API for weather data with caching, rate limiting, and multiple data source integration.',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1674&q=80',
-      tags: ['Node.js','Express','Redis','JWT'],
+      title: 'KnitCAD',
+      description: 'Designed and developed a smart application to create knitting patterns and export them as CSV files for automated production. Integrated Arduino and PLC controllers to interpret design data and control the knitting process seamlessly. This project highlights my skills in embedded systems, automation, and software–hardware integration.',
+      image: 'assets/project_images/KnitCAD.jpg',
+      tags: ['Java (Java SE)','MySQL'],
       category: 'api',
       repoUrl: '#',
       docsUrl: '#'
