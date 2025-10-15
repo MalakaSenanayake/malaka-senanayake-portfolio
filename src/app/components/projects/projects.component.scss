@@ -1,6 +1,7 @@
 .projects-section {
   background-color: #eeeeee;
   padding: 50px;
+  border-radius: 10px;
 }
 
 .projects-filter {
@@ -34,43 +35,100 @@
 
 .project-card {
   background: white;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    
+    &:after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+      margin-top: 8px;
+    }
+  }
 }
 
 .project-img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .project-content {
-  padding: 20px;
+  padding: 25px;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  /* Space between tags */
-  margin-bottom: 1rem;
+  gap: 8px;
+  margin: 15px 0;
 }
 
 .project-tag {
-  background: #eef5ff;
+  background: #f7fafc;
   color: var(--secondary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 3px;
-  margin-right: 8px;
-  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--secondary);
+    color: white;
+    transform: translateY(-2px);
+  }
 }
 
 .project-links {
   display: flex;
-  gap: 10px;
-}
+  gap: 15px;
+  margin-top: 20px;
 
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+
+    i {
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+  }
+}
 /* responsive */
 @media (max-width: 768px) {
   .projects-grid {
