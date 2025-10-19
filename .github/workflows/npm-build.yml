@@ -1,49 +1,59 @@
+# This workflow deploys an Angular application to GitHub Pages.
+
 name: Deploy Angular App to GitHub Pages
 
 on:
+  # Triggers the workflow on push events but only for the "production" branch
   push:
     branches: [ "production" ]
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
 
 jobs:
   build-and-deploy:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     
     steps:
+    # 1. Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Cache node modules
-      uses: actions/cache@v4
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
+    # 2. Sets up Node.js environment and uses the built-in caching for npm dependencies
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '22.19.0'
+        node-version: '20' # Using LTS version 20 is generally recommended
+        cache: 'npm' # This enables caching of npm dependencies
 
+    # 3. Installs dependencies using npm install
     - name: Install dependencies
-      run: npm ci
+      run: npm install
 
+    # 4. Builds the Angular application for production
+    # The base-href should match your custom domain or GitHub Pages URL structure.
     - name: Build Angular app
-      run: npx ng build --configuration production --aot --build-optimizer --optimization --base-href https://malakasenanayake.com/
+      run: npx ng build --configuration production --base-href https://malakasenanayake.com/
 
+    # 5. Minifies the main index.html file to optimize its size
     - name: Minify HTML
       run: |
         npm install -g html-minifier-terser
         html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --minify-css true --minify-js true -o dist/malaka-senanayake-portfolio/browser/index.html dist/malaka-senanayake-portfolio/browser/index.html
 
+    # 6. Deploys the built application to the gh-pages branch
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/production'
       uses: JamesIves/github-pages-deploy-action@v4
       with:
+        # The token is automatically provided by GitHub Actions
         token: ${{ secrets.GITHUB_TOKEN }}
+        # The branch to deploy to
         branch: gh-pages
+        # The folder containing the built application files
         folder: dist/malaka-senanayake-portfolio/browser
+        # Option to not clean the target branch before deploying
         clean: false
+
