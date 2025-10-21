@@ -14,7 +14,8 @@ export class ProjectService {
       image: 'assets/project_images/payTrack.jpg',
       tags: ['Java 17','Spring Boot','MySQL','micro-services','Angular'],
       category: 'web',
-      docsUrl: '#'
+      docsUrl: '#',
+      liveUrl: '#'
     },
     {
       id: 2,
@@ -31,7 +32,7 @@ export class ProjectService {
       description: 'Contributed to the development and deployment of an IoT-based employee safety and analytics solution at Virtusa. I was directly involved in creating and managing the AWS cloud environment, ensuring scalable and secure infrastructure to support real-time IoT data processing and analytics.',
       image: 'assets/project_images/modjoul.png',
       tags: ['AWS','Angular','Node.js','Python','Java'],
-      category: 'mobile',
+      category: 'web',
       liveUrl: 'https://modjoul.com'
     },
     {
@@ -41,7 +42,6 @@ export class ProjectService {
       image: 'assets/project_images/KnitCAD.png',
       tags: ['Java (Java SE)','MySQL'],
       category: 'api',
-      repoUrl: '#',
       docsUrl: '#'
     },
     {
@@ -51,8 +51,7 @@ export class ProjectService {
       image: 'assets/project_images/CodePilot.PNG',
       tags: ['Java 17','Spring Boot','Python','Angular','Docker','PostgreSQL'],
       category: 'web',
-      repoUrl: '#',
-      liveUrl: '#'
+      docsUrl: '#'
     }
   ];
 
